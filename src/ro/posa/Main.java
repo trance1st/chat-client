@@ -13,12 +13,20 @@ public class Main {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream));
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         Scanner scanner = new Scanner(System.in);
-        String nr1 = scanner.nextLine();
-        String nr2 = scanner.nextLine();
-        writer.write("cat face " + nr1 + " plus " + nr2 + "\n");
+
+        System.out.println(reader.readLine());
+        String name = scanner.nextLine();
+        writer.write(name + "\n");
         writer.flush();
         System.out.println(reader.readLine());
-        writer.close();
+        String dest = scanner.nextLine();
+        writer.write(dest + "\n");
+        writer.flush();
+
+        while (true) {
+            writer.write(scanner.nextLine() + "\n");
+            writer.flush();
+        }
 
     }
 }
